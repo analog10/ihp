@@ -4,6 +4,10 @@
 
 static bool info(struct ihp_ctx* ctx, uint32_t address, const uint8_t* data, size_t len)
 {
+	/* NULL data pointers indicate discontinuity of data or an error reading the data.
+	 * If the length == 0, then this is just a discontinuity of the data.
+	 * If the length is nonzero, then the length is the error code.
+	 * In this context we don't really care what the error was. */
 	if(!data)
 		return len ? true : false;
 
