@@ -16,8 +16,8 @@ ifeq ($(OS),Windows_NT)
 	STATIC_LIB=$(NAME).lib
 	LIB=$(NAME).dll
 else
-	STATIC_LIB=lib$(libname).a
-	LIB=lib$(libname).so
+	STATIC_LIB=lib$(NAME).a
+	LIB=lib$(NAME).so
 endif
 
 all: $(STATIC_LIB) $(LIB) ihp_test ihp_fill_test
