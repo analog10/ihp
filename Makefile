@@ -27,8 +27,7 @@ header_install :
 	cp $(INC) $(INC_DEST)/$(NAME)
 
 install :
-	mkdir -p $(LIB_DEST)/$(NAME)
-	cp $(STATIC_LIB) $(LIB) $(LIB_DEST)/$(NAME)
+	cp $(STATIC_LIB) $(LIB) $(LIB_DEST)
 
 $(LIB) : $(IHP_OBJ)
 	$(LD) $(LDFLAGS) -shared -o $@ $^
